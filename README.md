@@ -1,1 +1,1 @@
-# psg-oop-2025
+# Bienvenidos a Python Study Group 2025
