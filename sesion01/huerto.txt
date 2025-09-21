@@ -1,0 +1,22 @@
+Una asociación de productores comunitarios de tomates quiere dar
+a conocer sus productos, para esto quieren una aplicación web 
+donde las personas interesas en comprar sus tomates puedan ver
+fotos y ubicaciones de los huertos y comparar los tomates que
+producen según color, peso y especie
+
+Requisitos:
+- Ver fotos y ubicaciones de los huertos
+- Comparar los tomates según color, peso y especie
+
+Objetos:
+- huerto 🌱
+- tomate 🍅
+
+Características:
+- Huerto: ubicación, fotos
+- Tomate: color, peso, especie
+
+Acciones:
+- ver fotos
+- ver ubicaciones
+- comparar tomates
