@@ -49,7 +49,7 @@ Clases:
 
 ```mermaid
 classDiagram
-    class Hamburgues{
+    class Hamburguesa{
         tipo
         lechuga
         tomate
