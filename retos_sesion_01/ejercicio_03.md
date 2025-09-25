@@ -31,7 +31,13 @@ Características:
     - formato de descarga
 
 Acciones:
-- (No hay acciones)
+- seleccionar raza
+- seleccionar pelaje
+- seleccionar tamaño
+- agregar accesorios
+- cambiar el formato
+- generar dibujo
+- descargar dibujo
 
 # Diseño:
 
@@ -46,7 +52,13 @@ Clases:
         - accesorios
         - formato de descarga
     - Métodos:
-      - (No hay métodos)
+        - seleccionar_raza()
+        - seleccionar_pelaje()
+        - seleccionar_tamaño()
+        - agregar_accesorios()
+        - cambiar_formato()
+        - generar_dibujo()
+        - descargar_dibujo()
 
 ```mermaid
 classDiagram
@@ -56,6 +68,13 @@ classDiagram
         tamaño
         tipo_orejas
         accesorios
-        formato_descarga 
+        formato_descarga
+        seleccionar_raza()
+        seleccionar_pelaje()
+        seleccionar_tamaño()
+        agregar_accesorios()
+        cambiar_formato()
+        generar_dibujo()
+        descargar_dibujo() 
     }
 ```
