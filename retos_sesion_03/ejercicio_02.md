@@ -18,20 +18,21 @@ Objetos:
 - Cocinero
 
 Características:
-- Cocinero: productividad, ingredientes_disponibles, recetas_definidas
+- Cocinero: nombre, ingredientes, productividad, recetas_definidas, productividad_total
 
 Acciones:
-- Cocinero: cocinar, agregar_ingrediente, calcular_productividad, ver_productividad 
+- Cocinero: cocinar, mostrar_productividad_total, verificar_receta
 
 ```mermaid
 classDiagram
     class Cocinero {
+        String nombre
+        String ingredientes
         int productividad
-        String ingredientes_disponibles
         String recetas_definidas
+        int productividad_total
         cocinar(receta)
-        agregar_ingrediente(ingrediente)
-        calcular_productividad(cocineros)
-        ver_productividad()
+        mostrar_productividad_total()
+        verificar_receta(receta)
     }
 ```
