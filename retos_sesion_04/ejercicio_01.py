@@ -34,7 +34,7 @@ class Cuenta:
         else:
             print(f"Saldo insuficiente. Intentó retirar {monto}, pero solo tiene {self.__saldo}")
 
-
+# Implementando la clase
 cuenta1 = Cuenta(134500045, "Lorena Mendoza", 1500)
 cuenta1.mostrar_datos()
 print("-------------------------------------------------")
