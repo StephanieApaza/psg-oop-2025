@@ -42,6 +42,7 @@ classDiagram
     class Vehiculo {
         #velocidad: float
         +medio: String
+        +mostrar_datos()
     }
     class Bicicleta {
         +pedalear()
