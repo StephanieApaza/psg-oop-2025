@@ -1,4 +1,4 @@
-# Scenario
+# Escenario
 En su trayecto diario al trabajo, las personas pueden abordar distintos minibuses. Cada minibus está identificado por un número de ruta y sigue un recorrido compuesto por varias paradas (ubicaciones). Por otro lado, cada pasajero tiene un nombre y una ubicación de destino a la que desea llegar.
 Los pasajeros pueden subir o bajar del minibus en cualquier parada, pero bajo las siguientes condiciones:
 - Un pasajero solo puede subir si el recorrido del minibus incluye su destino entre las paradas programadas.
@@ -28,9 +28,11 @@ Características:
     - lista_paradas: List[Paradas]
     - pasajeros: List[Pasajeros]
     - parada_actual: String
+    - sentido_ruta: int
 - Pasajero:
     - nombre: String
     - ubicacion_destino: String
+    - en_minibus: Bool
 
 Acciones:
 - Minibus:
@@ -48,6 +50,7 @@ classDiagram
         +lista_paradas: List[Paradas]
         +pasajeros: List[Pasajeros]
         +parada_actual: String
+        +sentido_ruta: int
         +seguir_recorrido()
         +subir_pasajero()
         +bajar_pasajero()
@@ -55,6 +58,7 @@ classDiagram
     class Pasajero {
         +nombre: String
         +ubicacion_detino: String
+        +en_minibus: Bool
         +subir_minibus()
         +bajar_minibus()
     }
