@@ -23,19 +23,19 @@ Objetos:
 
 Características:
 - Martillo:
-      - tipo_mango
-      - material
-      - peso
+      - tipo_mango: String
+      - material: String
+      - peso: float
 - Destornillador:
-      - tipo_mango
-      - material
-      - tamaño_punta
+      - tipo_mango: String
+      - material: String
+      - tamaño_punta: String
 - Llave inglesa:
-      - tipo_mango
-      - material
-      - medida_ajuste
+      - tipo_mango: String
+      - material: String
+      - medida_ajuste: String
 - Carpintero:
-      - nombre
+      - nombre: String
 
 Acciones:
 - Martillo: usar clavar clavos
