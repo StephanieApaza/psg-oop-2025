@@ -47,5 +47,6 @@ classDiagram
         + __ne__()
         + __lt__()
         + __gt__()
+        + __str__()
     }
 ```
