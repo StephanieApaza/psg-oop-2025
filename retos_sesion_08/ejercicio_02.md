@@ -21,7 +21,7 @@ Ver el catálogo en el formato especificado.
 
 # Análisis
 Requisitos:
-- Gestionar un catálogo digital de destinos durísticos.
+- Gestionar un catálogo digital de destinos turísticos.
 - Cada destino tiene un nombre y un costo en USD.
 - Los destinos se representan como: [destino] ➡ [costo] USD
 - La representación del catálogo debe ser:
@@ -42,7 +42,7 @@ Características:
 
 Acciones:
 - Destino: mostrar_destino
-- Catalogo: obtener_longitud, acceder_indice, eliminar_destino, modificar_indice, iterar_catalogo, mostrar_catalogo
+- Catalogo: obtener_longitud, acceder_indice, eliminar_destino, modificar_indice, iterar_catalogo, agregar_destino, mostrar_catalogo
 
 ```mermaid
 classDiagram
@@ -58,6 +58,7 @@ classDiagram
         + __delitem__()
         + __setitem__()
         + __iter__()
+        + agregar_destino()
         + __str__()
     }
     Catalogo o-- Destino
