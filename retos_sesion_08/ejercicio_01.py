@@ -4,63 +4,63 @@ class Fraccion:
         self.numerador = numerador
         self.denominador = denominador
 
+    def __str__(self):
+        return f"{self.numerador}/{self.denominador}"
+
     def __add__(self, otra_fraccion):
         """Suma de fracciones"""
-        nuevo_numerador = (self.numerador * otra_fraccion.denominador) + (otra_fraccion.numerador * self.denominador)
-        nuevo_denominador = self.denominador * otra_fraccion.denominador
-        return Fraccion(nuevo_numerador, nuevo_denominador)
+        resultado_numerador = (self.numerador * otra_fraccion.denominador) + (otra_fraccion.numerador * self.denominador)
+        resultado_denominador = self.denominador * otra_fraccion.denominador
+        return Fraccion(resultado_numerador, resultado_denominador)
     
     def __sub__(self, otra_fraccion):
         """Resta de fracciones"""
-        nuevo_numerador = (self.numerador * otra_fraccion.denominador) - (otra_fraccion.numerador * self.denominador)
-        nuevo_denominador = self.denominador * otra_fraccion.denominador
-        return Fraccion(nuevo_numerador, nuevo_denominador)
+        resultado_numerador = (self.numerador * otra_fraccion.denominador) - (otra_fraccion.numerador * self.denominador)
+        resultado_denominador = self.denominador * otra_fraccion.denominador
+        return Fraccion(resultado_numerador, resultado_denominador)
     
     def __mul__(self, otra_fraccion):
         """Multiplicación de fracciones"""
-        nuevo_numerador = self.numerador * otra_fraccion.numerador
-        nuevo_denominador = self.denominador * otra_fraccion.denominador
-        return Fraccion(nuevo_numerador, nuevo_denominador)
+        resultado_numerador = self.numerador * otra_fraccion.numerador
+        resultado_denominador = self.denominador * otra_fraccion.denominador
+        return Fraccion(resultado_numerador, resultado_denominador)
 
     def __truediv__(self, otra_fraccion):
         """División de fracciones"""
-        nuevo_numerador = self.numerador * otra_fraccion.denominador
-        nuevo_denominador = self.denominador * otra_fraccion.numerador
-        return Fraccion(nuevo_numerador, nuevo_denominador)
+        resultado_numerador = self.numerador * otra_fraccion.denominador
+        resultado_denominador = self.denominador * otra_fraccion.numerador
+        return Fraccion(resultado_numerador, resultado_denominador)
     
     # Comparaciones
     def __eq__(self, otra_fraccion):
-        """Igualdad"""
+        """Comparación de igualdad entre fracciones"""
         if isinstance(otra_fraccion, Fraccion):
             return self.numerador * otra_fraccion.denominador == otra_fraccion.numerador * self.denominador
         return False
 
     def __ne__(self, otra_fraccion):
-        """Desigualdad"""
+        """Comparación de desigualdad entre fracciones"""
         if isinstance(otra_fraccion, Fraccion):
-            return (self.numerador * otra_fraccion.denominador != self.denominador * otra_fraccion.numerador)
+            return self.numerador * otra_fraccion.denominador != self.denominador * otra_fraccion.numerador
         return True
 
     def __lt__(self, otra_fraccion):
-        """Menor que"""
+        """Comparación entre fracciones: Menor que"""
         if isinstance(otra_fraccion, Fraccion):
             return self.numerador * otra_fraccion.denominador < otra_fraccion.numerador * self.denominador
         return False
 
     def __gt__(self, otra_fraccion):
-        """Mayor que"""
+        """Comparación entre fracciones: Mayor que"""
         if isinstance(otra_fraccion, Fraccion):
             return self.numerador * otra_fraccion.denominador > otra_fraccion.numerador * self.denominador
-
-    # Representación   
-    def __str__(self):
-        return f"{self.numerador}/{self.denominador}"
         
 # Uso
-fraccion_uno = Fraccion(3, 4)
-fraccion_dos = Fraccion(1, 3)
+fraccion_uno = Fraccion(10, 3)
+fraccion_dos = Fraccion(35, 5)
 
-print("Operaciones:")
+print(f"Fracciones: {fraccion_uno} | {fraccion_dos}")
+print("\nOperaciones:")
 print(f"{fraccion_uno} + {fraccion_dos} = {fraccion_uno + fraccion_dos}")
 print(f"{fraccion_uno} - {fraccion_dos} = {fraccion_uno - fraccion_dos}")
 print(f"{fraccion_uno} * {fraccion_dos} = {fraccion_uno * fraccion_dos}")
