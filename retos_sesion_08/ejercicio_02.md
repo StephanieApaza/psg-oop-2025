@@ -21,16 +21,23 @@ Ver el catálogo en el formato especificado.
 
 # Análisis
 Requisitos:
-- Gestionar un catálogo digital de destinos turísticos.
+- La agencia debe gestionar un catálogo digital de destinos turísticos.
 - Cada destino tiene un nombre y un costo en USD.
+- El catálogo debe permitir visualizar, modificar y recorrer los destinos de forma intuitiva.
+- Existe una relación de agregación entre Destinos y Catálogo.
 - Los destinos se representan como: [destino] ➡ [costo] USD
-- La representación del catálogo debe ser:
+- El catálogo se representa como:
+
   🗺 Destinos 🗺
   1. destino1
   2. destino2
     ...
-- El catálogo permite: obtener su longitud, acceder por su índice, agregar destinos, eliminar destinos e iterar sobre los destinos.
-- Mostrar el catálogo en el formato especificado.
+- El catálogo debe poder saber cuantos destinos tiene ➡ len(catalogo).
+- El catálogo debe poder acceder a los destinos por su índice ➡ catalogo[indice].
+- El catálogo debe poder agregar nuevos destinos ➡ catalogo[indice]=destino.
+- El catálogo debe poder eliminar destinos ➡ del catalogo[indice].
+- El catálogo debe poder iterar sobre los destinos ➡ for destino in catalogo.
+- Se debe mostrar el catálogo en el formato especificado.
 
 Objetos:
 - Destino
@@ -38,28 +45,27 @@ Objetos:
 
 Características:
 - Destino: nombre, costo
-- Catalogo: lista_destinos
+- Catalogo: lista de destinos
 
 Acciones:
-- Destino: mostrar_destino
-- Catalogo: obtener_longitud, acceder_indice, eliminar_destino, modificar_indice, iterar_catalogo, agregar_destino, mostrar_catalogo
+- Destino: representacion
+- Catalogo: longitud, representacion, acceso a destinos por indice, agregar, eliminar, iterar
 
 ```mermaid
 classDiagram
     class Destino {
-        -nombre: String
-        -costo: float
+        + nombre: string
+        + costo: float
         + __str__()
     }
     class Catalogo{
-        -lista_destino: String
+        + destinos: List[Destino]
+        + __str__()
         + __len__()
         + __getitem__()
-        + __delitem__()
         + __setitem__()
+        + __delitem__()
         + __iter__()
-        + agregar_destino()
-        + __str__()
     }
     Catalogo o-- Destino
 ```
