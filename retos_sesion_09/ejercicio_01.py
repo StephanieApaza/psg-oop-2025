@@ -15,6 +15,7 @@ class PiedraPapelTijera:
             return
         self.__puntaje_jugador = 0
         self.__puntaje_computadora = 0
+        self.iniciado = True
 
     def iniciar_partida(self):
         opciones = ["piedra", "papel", "tijera"]
