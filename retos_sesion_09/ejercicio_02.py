@@ -1,116 +1,89 @@
 class BeatBox:
     __instancia = None
+    reproduciendo = False
 
     def __new__(cls):
         if cls.__instancia is None:
             cls.__instancia = super().__new__(cls)
         return cls.__instancia
     
-    def seleccionar_pista(self, pista_Seleccionada):
-        """Selecciona una pista por su nombre"""
-        if not pista_Seleccionada.strip():
-            print("El nombre de la pista no puede estar vacío.")
+    def __init__(self):
+        if self.reproduciendo:
+            print("La consola ya se esta reproduciendo.")
             return
-        
-        self.__pista = pista_Seleccionada.strip()
-        print(f"Pista seleccionada: {self.__pista}")
+        self.__pista_seleccionada = None
+        self.__nivel_volumen = 20      
+        self.__efecto_aplicado = None 
+        self.reproduciendo = True
 
-    def ajustar_volumen(self):
-        """Sube o baja el volumen dentro del rango 0–100"""
-        print("\nAjustar volumen:")
-        print("1. Subir volumen")
-        print("2. Bajar volumen")
+    def seleccionar_pista(self, nombre_pista):
+        """Selecciona una pista de audio."""
+        self.__pista_seleccionada = nombre_pista
+        print(f"Pista seleccionada: {self.__pista_seleccionada}")
 
-        opcion = input("Seleccione una opción: ")
-
-        if opcion == "1":
-            if self.__nivel_volumen < 10:
+    def ajustar_volumen(self, volumen):
+        """Aumenta o disminuye el volumen."""
+        if volumen == "subir":
+            if self.__nivel_volumen < 100:
                 self.__nivel_volumen += 5
                 print(f"Volumen aumentado a {self.__nivel_volumen}")
             else:
-                print("El volumen ya está al máximo (10).")
+                print("El volumen ya está al máximo.")
 
-        elif opcion == "2":
+        elif volumen == "bajar":
             if self.__nivel_volumen > 0:
                 self.__nivel_volumen -= 5
                 print(f"Volumen disminuido a {self.__nivel_volumen}")
             else:
-                print("El volumen ya está al mínimo (0).")
+                print("El volumen ya está al mínimo.")
 
-        else:
-            print("❌ Opción no válida.")
+    def aplicar_efecto(self, efecto):
+        """Aplica un efecto de sonido."""
+        efectos_validos = ["eco", "reverb", "distorsion"]
 
-        def aplicar_efecto(self):
-            """Aplica uno de los efectos disponibles"""
-            print("\nAplicar efecto de sonido:")
-            print("1. Eco")
-            print("2. Reverb")
-            print("3. Distorsión")
-            print("4. Quitar efecto")
-
-            opcion = input("Seleccione una opción: ")
-
-            efectos = {
-                "1": "Eco",
-                "2": "Reverb",
-                "3": "Distorsión",
-                "4": None
-            }
-
-            if opcion in efectos:
-                self.__efecto = efectos[opcion]
-                if self.__efecto:
-                    print(f"Efecto aplicado: {self.__efecto}")
-                else:
-                    print("Efecto eliminado")
-            else:
-                print("Opción no válida.")
+        if efecto not in efectos_validos:
+            print("❎ Efecto inválido. Aplica una de estas opciones: eco, reverb, distorsion")
+            return
+        
+        self.__efecto_aplicado = efecto
+        print(f"Efecto aplicado: {self.__efecto_aplicado}")
 
     def mostrar_estado(self):
-        """Muestra la configuración actual de la consola"""
-        pista = self.__pista if self.__pista else "Ninguna"
-        efecto = self.__efecto if self.__efecto else "Ninguno"
+        """Muestra el estado actual de la consola."""
+        print("\nESTADO DE LA CONSOLA:")
+        print(f"Pista seleccionada: {self.__pista_seleccionada}")
+        print(f"Volumen: {self.__nivel_volumen}")
+        print(f"Efecto aplicado: {self.__efecto_aplicado}\n")
 
-        print("\nEstado actual de la consola BeatBox:")
-        print(f" Pista: {pista}")
-        print(f" Volumen: {self.__volumen}")
-        print(f" Efecto: {efecto}")
+# Menú
+while True:
+    print("-"*40)
+    print("CONSOLA BEATBOX")
+    print("1. Seleccionar pista")
+    print("2. Subir volumen")
+    print("3. Bajar volumen")
+    print("4. Aplicar efecto")
+    print("5. Mostrar estado")
+    print("6. Salir")
+    print("-"*40)
 
-    # Representación como string
-    def __str__(self):
-        pista = self.__pista if self.__pista else "Ninguna"
-        efecto = self.__efecto if self.__efecto else "Ninguno"
-        return f"BeatBox(pista={pista}, volumen={self.__volumen}, efecto={efecto})"
-    
-def menu():
-    beatbox = BeatBox()
+    opcion = input("Selecciona una opción: ")
 
-    while True:
-        print("\n=== 🎧 Consola BeatBox ===")
-        print("1. Ingresar el nombre de la pista de audio")
-        print("2. Ajustar volumen")
-        print("3. Aplicar efecto de sonido")
-        print("4. Mostrar estado actual")
-        print("5. Salir")
+    if opcion == "1":
+        nombre = input("Ingresa el nombre de la pista: ")
+        BeatBox().seleccionar_pista(nombre)
+    elif opcion == "2":
+        BeatBox().ajustar_volumen("subir")
+    elif opcion == "3":
+        BeatBox().ajustar_volumen("bajar")
+    elif opcion == "4":
+        efecto = input("Ingresa un efecto (eco, reverb, distorsion): ").lower()
+        BeatBox().aplicar_efecto(efecto)
+    elif opcion == "5":
+        BeatBox().mostrar_estado()
+    elif opcion == "6":
+        print("Saliendo de la consola BeatBox...")
+        break
+    else:
+        print("❎ Opción inválida. Intenta nuevamente.")
 
-        opcion = input("Seleccione una opción: ")
-
-        if opcion == "1":
-            pista = input("Ingrese el nombre de la pista: ")
-            beatbox.seleccionar_pista(pista)
-
-        elif opcion == "2":
-            beatbox.ajustar_volumen()
-
-        elif opcion == "3":
-            beatbox.aplicar_efecto()
-
-        elif opcion == "4":
-            beatbox.mostrar_estado()
-
-        elif opcion == "5":
-            print("Saliendo de BeatBox...")
-            break
-
-        else:
-            print("Opción no válida. Intente nuevamente.")
