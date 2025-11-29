@@ -34,10 +34,10 @@ class PiedraPapelTijera:
             (eleccion_jugador == "papel" and eleccion_computadora == "piedra") or
             (eleccion_jugador == "tijera" and eleccion_computadora == "papel")
         ):
-            print("🎉 ¡Ganaste la ronda!")
+            print("🎉 ¡Ganaste la ronda de este juego!")
             self.__puntaje_jugador += 1
         else:
-            print("La computadora gana la ronda.")
+            print("La computadora gana la ronda de este juego.")
             self.__puntaje_computadora += 1
 
     def mostrar_puntaje(self):
