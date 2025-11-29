@@ -36,7 +36,7 @@ Características:
 - BeatBox: pista seleccionada, nivel de volumen, efecto aplicado
 
 Acciones:
-- BeatBox: seleccionar pista, ajustar volumen, aplicar efecto, mostrar el estado, representacion
+- BeatBox: seleccionar pista, ajustar volumen, aplicar efecto, mostrar el estado
 
 ```mermaid
 classDiagram
@@ -47,10 +47,9 @@ classDiagram
         -efecto_aplicado: string
         -BeatBox()
         +get_instance() BeatBox
-        +seleccionar_pista(nombre)
-        +ajustar_volumen()
-        +aplicar_efecto()
+        +seleccionar_pista(nombre_pista)
+        +ajustar_volumen(volumen)
+        +aplicar_efecto(efecto)
         +mostrar_estado()
-        +__str__()
     }
 ```
