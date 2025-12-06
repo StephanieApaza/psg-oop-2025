@@ -1,0 +1,10 @@
+# Constantes
+PIEDRA = "🧱"
+PAPEL = "📄"
+TIJERA = "✂️"
+OPCIONES = [PIEDRA, PAPEL, TIJERA]
+REGLAS = {
+    PIEDRA: TIJERA,
+    TIJERA: PAPEL,
+    PAPEL: PIEDRA
+}

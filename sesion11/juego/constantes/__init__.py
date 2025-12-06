@@ -1,0 +1,1 @@
+from .opciones import REGLAS, OPCIONES
