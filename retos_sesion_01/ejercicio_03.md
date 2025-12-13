@@ -10,19 +10,19 @@ El dibujo final puede descargarse en formato PNG o JPG.
 # Análisis
 
 Requisitos:
-- App para dibujar perros con IA
+- Diseñar una App para dibujar perros con IA
 - Seleccionar la raza (labrador, pastor alemán, etc.)
-- Seleccionar el pelaje (blanco, marrón, negro, etc.)
+- Seleccionar el color de pelaje (blanco, marrón, negro, etc.)
 - Seleccionar el tamaño (pequeño, mediano, grande)
-- Seleccionar el tipo de orejas (caídas, erguidas)
-- Agregar hasta dos accesorios (sombreros o gafas)
+- Seleccionar el tipo de orejas (caídas, erguidas, etc.)
+- Agregar hasta dos accesorios (sombreros, gafas, etc.)
 - Descargar el dibujo en formato PNG o JPG
 
 Objetos:
-- App para dibujar perros
+- Perro
 
 Características:
-- App para dibujar perros
+- Perro
     - raza
     - pelaje
     - tamaño
@@ -31,50 +31,31 @@ Características:
     - formato de descarga
 
 Acciones:
-- seleccionar raza
-- seleccionar pelaje
-- seleccionar tamaño
-- agregar accesorios
-- cambiar el formato
-- generar dibujo
-- descargar dibujo
+- (No hay acciones)
 
 # Diseño:
 
 Clases:
-- App para dibujar perros 🐶:
-    - Nombre: App para dibujar perros
+- Perro 🐶:
+    - Nombre: Perro
     - Atributos:
         - raza
         - pelaje
         - tamaño
-        - tipo de orejas
+        - tipo_orejas
         - accesorios
-        - formato de descarga
+        - formato_descarga
     - Métodos:
-        - seleccionar_raza()
-        - seleccionar_pelaje()
-        - seleccionar_tamaño()
-        - agregar_accesorios()
-        - cambiar_formato()
-        - generar_dibujo()
-        - descargar_dibujo()
+        - (No hay métodos)
 
 ```mermaid
 classDiagram
-    class AppDibujarPerros{
+    class Perro{
         raza
         pelaje
         tamaño
         tipo_orejas
         accesorios
-        formato_descarga
-        seleccionar_raza()
-        seleccionar_pelaje()
-        seleccionar_tamaño()
-        agregar_accesorios()
-        cambiar_formato()
-        generar_dibujo()
-        descargar_dibujo() 
+        formato_descarga 
     }
 ```
