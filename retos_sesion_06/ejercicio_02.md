@@ -1,28 +1,14 @@
-# Escenario
-Se debe modelar un edificio ubicado en la ciudad de La Paz, compuesto por 3 pisos. Cada piso contiene una combinación de departamentos y oficinas
-Cada departamento tiene un número que comienza con el número del piso seguido de un número de unidad (por ejemplo: 201, 304).
-Cada oficina tiene un número que comienza con el número del piso seguido de una letra (por ejemplo: 2A, 3C).
-Además:
-El edificio tiene direccion y nombre.
-Los pisos tienen un atributo numero
-Las oficinas cuentan con un atributo telefono.
-Los departamentos tienen un atributo inquilinos.
-El sistema debe permitir:
-Crear un edificio con sus pisos correspondientes.
-Agregar departamentos y oficinas a cada piso.
-Acceder y mostrar la información del edificio de forma organizada y jerárquica
-
 # Análisis
 Requisitos:
-- Crear un edificio compuesto por 3 pisos, cada piso tiene departamentos y oficinas
-- El edificio tiene nombre y dirección
-- Los pisos tienen un atributo número
-- Cada departamento tiene un número que comienza con el número de piso seguido de un número de unidad
-- Cada oficina tiene un número que comienza con el número de piso seguido de una letra
-- Los departamentos tienen un atributo inquilinos
-- Las oficinas tienen un atributo teléfono
-- Agregar departamentos y oficinas a cada piso
-- Acceder y mostrar la información del edificio
+- Registrar la información general de un edificio, nombre, dirección y composición por pisos
+- Asociar pisos al edificio
+- Registrar el número identificador de cada piso
+- Asociar departamentos y oficinas a un piso
+- Registrar el número identificador de cada departamento, un número que comienza con el número de piso seguido de un número de unidad
+- Registrar el número identificador de cada oficina, un número que comienza con el número de piso seguido de una letra
+- Registrar los inquilinos de un departamento
+- Registrar el teléfono de una oficina
+- Mostrar la información del edificio de forma jerárquica
 
 Objetos:
 - Edificio
@@ -32,16 +18,16 @@ Objetos:
 
 Características:
 - Edificio:
-    - nombre: String
-    - direccion: String
+    - nombre
+    - direccion
 - Piso:
-    - numero: int
+    - numero
 - Departamento:
-    - numero: int
-    - inquilinos: List[String]
+    - numero
+    - inquilinos
 - Oficina:
-    - numero: String
-    - telefono: int
+    - numero
+    - telefono
   
 Acciones:
 - Edificio:
@@ -55,6 +41,38 @@ Acciones:
 - Oficina:
     - (sin acciones)
 
+# Diseño
+Clases:
+- Edificio:
+  - Nombre: Edificio
+  - Atributos:
+      - nombre: String
+      - direccion: String
+  - Métodos:
+      - agregar_piso()
+      - mostrar_info()
+- Piso:
+  - Nombre: Piso
+  - Atributos:
+      - numero: Int
+  - Métodos:
+      - agregar_departamento()
+      - agregar_oficina()
+- Departamento:
+  - Nombre: Departamento
+  - Atributos:
+      - numero: Int
+      - inquilinos: List[String]
+  - Métodos:
+      - (sin metodos)
+- Oficina:
+  - Nombre: Oficina
+  - Atributos:
+      - numero: String
+      - telefono: Int
+  - Métodos:
+      - (sin metodos)
+
 ```mermaid
 classDiagram
     class Edificio {
@@ -64,17 +82,17 @@ classDiagram
         +mostrar_info()
     }
     class Piso {
-        +numero: int
+        +numero: Int
         +agregar_departamento()
         +agregar_oficina()
     }
     class Departamento {
-        +numero: int
+        +numero: Int
         +inquilinos: List[String]
     }
     class Oficina {
         +numero: String
-        +telefono: int
+        +telefono: Int
     }
     Edificio *-- Piso
     Piso *-- Departamento
