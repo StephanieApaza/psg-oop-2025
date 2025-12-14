@@ -8,28 +8,31 @@ class Atleta:
         if self.energia > 0:
             self.fuerza += 2
             self.energia -= 1
-            print(f"{self.nombre} entrenó. Ahora tiene una energía: {self.energia} y fuerza: {self.fuerza}")
+            print(f"{self.nombre} entrenó. " f"Energía: {self.energia}, Fuerza: {self.fuerza}")
         else:
             print(f"{self.nombre} está demasiado cansado para entrenar.")
 
     def descansar(self):
         self.energia += 1
-        print(f"{self.nombre} descansó. Recuperó más energia, ahora tiene una energía: {self.energia}")
+        print(f"{self.nombre} descansó. " f"Energía actual: {self.energia}")
 
-    def comer(self, comida):
-        if comida == 'hamburguesa':
+    def comer(self, tipo_comida):
+        if tipo_comida == 'hamburguesa':
             self.energia += 1
-            print(f"{self.nombre} comió una hamburguesa. Recuperó energía, ahora tiene una energía: {self.energia}")
+            print(f"{self.nombre} comió una hamburguesa. " f"Energía actual: {self.energia}")
         else:
-            print(f"{self.nombre} comió una comida distinta a hamburguesa. Su energía se mantiene igual.")
+            print(f"{self.nombre} comió {tipo_comida}. " f"La energía se mantiene igual.")
 
 # Instanciando dos atletas
-atleta1 = Atleta("Mariana", 10, 15)
-atleta2 = Atleta("Lucas", 9, 20)
+atleta_mariana = Atleta("Mariana", 10, 15)
+atleta_lucas = Atleta("Lucas", 9, 20)
 
-atleta1.entrenar()
-atleta2.entrenar()
-atleta1.descansar()
-atleta2.descansar()
-atleta1.comer('hamburguesa')
-atleta2.comer('apio')
+print("\nAcciones:")
+atleta_mariana.entrenar()
+atleta_lucas.entrenar()
+
+atleta_mariana.descansar()
+atleta_lucas.descansar()
+
+atleta_mariana.comer("hamburguesa")
+atleta_lucas.comer("apio")
