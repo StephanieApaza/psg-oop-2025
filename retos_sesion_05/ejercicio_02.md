@@ -69,21 +69,21 @@ Clases:
   - Atributos:
       - (sin atributos)
   - Métodos:
-      - (hereda de nadar)
+      - (hereda de nadador)
       - mostrar()
 - Pajaro:
   - Nombre: Pajaro
   - Atributos:
       - (sin atributos)
   - Métodos:
-      - (hereda de volar)
+      - (hereda de volador)
       - mostrar()
 - Pato:
   - Nombre: Pato
   - Atributos:
       - (sin atributos)
   - Métodos:
-      - (hereda de nadar y volar)
+      - (hereda de nadador y volador)
       - mostrar()
 
 ```mermaid
