@@ -11,12 +11,14 @@ Toma en cuenta las siguientes características:
 
 # Análisis
 Requisitos:
-- Abordar un minibus en el trayecto diario al trabajo
-- Minubus tiene un número de ruta, sigue un recorrido compuesto por paradas y puede transportar múltiples pasajeros
-- Pasajero tiene un nombre y una ubicación de destino
-- Subir a un minibus solo si el recorrido incluye el destino entre las paradas programadas
-- Bajar del minibus si la parada actual coincide con su destino
-- Paradas circulares, al llegar al final del recorrido el minibus invierte su lista de paradas y regresa
+- Representar el recorrido de un minibus identificado por un número de ruta
+- Registrar las paradas programadas que conforman el recorrido del minibus
+- Permitir el transporte de múltiples pasajeros dentro de un minibus
+- Registrar el nombre y el destino de cada pasajero
+- Permitir que un pasajero suba al minibus solo si su destino se encuentra en el recorrido
+- Permitir que un pasajero baje del minibus únicamente cuando la parada actual coincida con su destino
+- Simular el movimiento del minibus entre paradas de forma circular, invirtiendo el sentido al llegar al final
+  del recorrido
 
 Objetos:
 - Minibus
@@ -24,43 +26,68 @@ Objetos:
 
 Características:
 - Minibus:
-    - numero_ruta: int
-    - lista_paradas: List[Paradas]
-    - pasajeros: List[Pasajeros]
-    - parada_actual: String
-    - sentido_ruta: int
+    - numero_ruta
+    - paradas_programadas
+    - pasajeros
+    - parada_actual
+    - sentido_ruta
 - Pasajero:
-    - nombre: String
-    - ubicacion_destino: String
-    - en_minibus: Bool
+    - nombre
+    - destino
+    - en_minibus
 
 Acciones:
 - Minibus:
-    - seguir_recorrido()
-    - subir_pasajero()
-    - bajar_pasajero()
+    - avanzar_parada()
+    - agregar_pasajero()
+    - retirar_pasajero()
 - Pasajero:
-    - subir_minibus()
-    - bajar_minibus()
+    - subir()
+    - bajar()
+
+# Diseño
+
+Clases:
+- Minibus:
+  - Nombre: Minibus
+  - Atributos:
+      - numero_ruta: Int
+      - paradas_programadas: List[String]
+      - pasajeros: List[Pasajero]
+      - parada_actual: String
+      - sentido_ruta: Int
+  - Métodos:
+      - avanzar_parada()
+      - agregar_pasajero(pasajero)
+      - retirar_pasajero(pasajero)
+- Pasajero:
+  - Nombre: Pasajero
+  - Atributos:
+      - nombre: String
+      - destino: String
+      - en_minibus: Bool
+  - Métodos:
+      - subir(minibus)
+      - bajar(minibus)
 
 ```mermaid
 classDiagram
     class Minibus {
-        +numero_ruta: int
-        +lista_paradas: List[Paradas]
-        +pasajeros: List[Pasajeros]
+        +numero_ruta: Int
+        +paradas_programadas: List[String]
+        +pasajeros: List[Pasajero]
         +parada_actual: String
-        +sentido_ruta: int
-        +seguir_recorrido()
-        +subir_pasajero()
-        +bajar_pasajero()
+        +sentido_ruta: Int
+        +avanzar_parada()
+        +agregar_pasajero(pasajero)
+        +retirar_pasajero(pasajero)
     }
     class Pasajero {
         +nombre: String
-        +ubicacion_detino: String
+        +destino: String
         +en_minibus: Bool
-        +subir_minibus()
-        +bajar_minibus()
+        +subir(minibus)
+        +bajar(minibus)
     }
     Minibus o-- Pasajero
 ```
