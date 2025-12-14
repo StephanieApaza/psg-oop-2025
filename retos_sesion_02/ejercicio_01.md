@@ -20,10 +20,10 @@ Objetos:
 
 Características:
 - Animal
-    - origen: String
-    - especie: String
-    - tipo: String
-    - lugar: String
+    - origen
+    - especie
+    - tipo
+    - lugar
 
 Acciones:
 - (No hay acciones)
@@ -34,10 +34,10 @@ Clases:
 - Animal:
     - Nombre: Animal
     - Atributos:
-        - origen
-        - especie
-        - tipo
-        - lugar
+        - origen: String
+        - especie: String
+        - tipo: String
+        - lugar: String
     - Métodos:
         - (no hay métodos)
 
