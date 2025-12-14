@@ -9,11 +9,13 @@ Avión: Incrementar su velocidad mediante la acción de volar.
 
 # Análisis
 Requisitos:
-- Desarrollar una simulación que represente el comportamiento de vehículos.
-- La velocidad es un dato protegido, puede consultarse, pero se modifica con acciones específicas.
-- El medio representa el entorno donde se desplaza el vehículo, puede consultarse y modificarse.
-- Bicicleta es un tipo de vehículo cuya velocidad se incrementa mediante la acción de pedalear.
-- Avión es un tipo de vehículo cuya velocidad se incrementa mediante la acción de volar.
+- Representar el comportamiento de vehículos utilizados por una empresa de transporte
+- Registrar la velocidad de cada vehículo como un dato protegido
+- Consultar la velocidad del vehículo sin permitir su modificación directa
+- Registrar el medio en el que se desplaza el vehículo (terrestre, acuatico, aereo)
+- Consultar y modificar el medio del vehículo libremente
+- Incrementar la velocidad de la bicicleta mediante la acción de pedalear
+- Incrementar la velocidad del avión mediante la acción de volar
 
 Objetos:
 - Vehiculo (clase padre)
@@ -22,8 +24,8 @@ Objetos:
 
 Características:
 - Vehiculo:
-  - velocidad: float
-  - medio: String (terrestre, acuatico, aereo)
+  - velocidad
+  - medio
 - Bicicleta:
   - (sin caracteristicas)
 - Avion:
@@ -31,11 +33,34 @@ Características:
 
 Acciones:
 - Vehiculo
-  - (sin acciones)
+  - mostrar_datos()
 - Bicicleta:
   - pedalear()
 - Avion:
   - volar()
+
+# Diseño
+
+Clases:
+- Vehiculo:
+  - Nombre: Vehiculo
+  - Atributos:
+      - velocidad: float
+      - medio: String
+  - Métodos:
+      - mostrar_datos()
+- Bicicleta:
+  - Nombre: Bicicleta
+  - Atributos:
+      - (hereda de vehiculo)
+  - Métodos:
+      - pedalear()
+- Avion:
+  - Nombre: Avion
+  - Atributos:
+      - (hereda de vehiculo)
+  - Métodos:
+      - volar()
 
 ```mermaid
 classDiagram
