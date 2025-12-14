@@ -10,7 +10,7 @@ class Cocinero:
     def __init__(self, nombre, ingredientes):
         self.nombre = nombre
         self.ingredientes = ingredientes
-        self.productividad = 0
+        self.productividad_individual = 0
 
     # Método de instancia
     def cocinar(self, receta):
@@ -23,7 +23,7 @@ class Cocinero:
 
         if not faltan_ingredientes:
             print(f"{self.nombre} cocinó {receta}")
-            self.productividad += 1 
+            self.productividad_individual += 1 
             Cocinero.productividad_total += 1
 
         else:
@@ -42,22 +42,23 @@ class Cocinero:
         else:
             print(f"La receta {receta} no es válida.")
 
+
 # Instanciando tres Cocineros y probando sus métodos
-cocinero1 = Cocinero("Amalia", ['harina', 'agua', 'sal', 'tomate', 'queso'])
-cocinero2 = Cocinero("Leonardo", ['harina', 'agua', 'sal', "chocolate"])
-cocinero3 = Cocinero("Elena",['harina'])
+cocinero_amalia = Cocinero("Amalia", ['harina', 'agua', 'sal', 'tomate', 'queso'])
+cocinero_leonardo = Cocinero("Leonardo", ['harina', 'agua', 'sal', "chocolate"])
+cocinero_elena = Cocinero("Elena",['harina'])
 print("--------------------------------------------------------------------")
 Cocinero.verificar_receta("pizza")
 Cocinero.verificar_receta("galleta")
 Cocinero.verificar_receta("queque")
 print("--------------------------------------------------------------------")
-cocinero1.cocinar("pizza")
-cocinero2.cocinar("galleta")
-cocinero3.cocinar("pan")
+cocinero_amalia.cocinar("pizza")
+cocinero_leonardo.cocinar("galleta")
+cocinero_elena.cocinar("pan")
 print("--------------------------------------------------------------------")
-print(f"{cocinero1.nombre}: {cocinero1.productividad}")
-print(f"{cocinero2.nombre}: {cocinero2.productividad}")
-print(f"{cocinero3.nombre}: {cocinero3.productividad}")
+print(f"{cocinero_amalia.nombre}: {cocinero_amalia.productividad_individual}")
+print(f"{cocinero_leonardo.nombre}: {cocinero_leonardo.productividad_individual}")
+print(f"{cocinero_elena.nombre}: {cocinero_elena.productividad_individual}")
 
 # Productividad total
 Cocinero.mostrar_productividad_total()
