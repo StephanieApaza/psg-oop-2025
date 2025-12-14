@@ -11,12 +11,12 @@ Cada personaje debe contar con un método mostrar() que indique el tipo de perso
 
 # Análisis
 Requisitos:
-- Desarrollar un videojuego tipo aventura con personajes que tienen distintas habilidades.
-- El tipo nadador puede ejecutar la acción nadar.
-- El tipo volador puede ejecutar la acción volar.
-- El personaje pez tiene la habilidad de nadar.
-- El personaje pájaro tiene la habilidad de volar.
-- El personaje pato tiene la habilidad de nadar y volar.
+- Representar personajes de un videojuego tipo aventura
+- Definir habilidades de desplazamiento mediante tipos de personaje
+- Ejecutar la acción de nadar para los personajes de tipo nadador
+- Ejecutar la acción de volar para los personajes de tipo volador
+- Permitir que un personaje posea una o más habilidades
+- Mostrar el tipo de personaje y sus habilidades mediante un método mostrar
 
 Objetos:
 - Nadador (clase padre)
@@ -48,6 +48,43 @@ Acciones:
   - mostrar()
 - Pato:
   - mostrar()
+
+# Diseño
+
+Clases:
+- Nadador:
+  - Nombre: Nadador
+  - Atributos:
+      - (sin atributos)
+  - Métodos:
+      - nadar()
+- Volador:
+  - Nombre: Volador
+  - Atributos:
+      - (sin atributos)
+  - Métodos:
+      - volar()
+- Pez:
+  - Nombre: Pez
+  - Atributos:
+      - (sin atributos)
+  - Métodos:
+      - (hereda de nadar)
+      - mostrar()
+- Pajaro:
+  - Nombre: Pajaro
+  - Atributos:
+      - (sin atributos)
+  - Métodos:
+      - (hereda de volar)
+      - mostrar()
+- Pato:
+  - Nombre: Pato
+  - Atributos:
+      - (sin atributos)
+  - Métodos:
+      - (hereda de nadar y volar)
+      - mostrar()
 
 ```mermaid
 classDiagram
