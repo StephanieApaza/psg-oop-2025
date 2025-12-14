@@ -10,29 +10,51 @@ Entrenar: aumenta su fuerza, pero consume energía.
 Descansar: recupera energía.
 Comer: solo puede consumir hamburguesas, lo que también le ayuda a recuperar energía.
 
-
 # Análisis
 
 Requisitos:
-- Crear un atleta
-- El atleta tiene tres atributos (nombre, energía y fuerza)
-- El atleta puede realizar acciones (entrenar, descansar y comer(solo hamburguesa))
+- Crear el personaje atleta que representa al personaje principal del juego
+- Asignar tres atributos al atleta: nombre, energía y fuerza
+- Implementar las acciones que realiza el atleta: entrenar, descansar y comer
+- Recuperar energía solo comiendo hamburguesa
+- Aumentar la fuerza del atleta consume energía
+- Descansar permite recuperar energía
 
 Objetos:
 - Atleta
 
 Características:
-- Atleta: nombre, energía, fuerza
+- Atleta: 
+    - nombre
+    - energía
+    - fuerza
 
 Acciones:
-- Atleta: entrenar, descansar y comer
+- Atleta: 
+    - entrenar
+    - descansar
+    - comer
+
+# Diseño
+
+Clases:
+- Atleta:
+  - Nombre: Atleta
+  - Atributos:
+      - nombre: String
+      - energia: float
+      - fuerza: float
+  - Métodos:
+      - entrenar()
+      - descansar()
+      - comer()
 
 ```mermaid
 classDiagram
     class Atleta {
-        String nombre
-        float energia
-        float fuerza
+        nombre: String
+        energia: float
+        fuerza: float
         entrenar()
         descansar()
         comer()
