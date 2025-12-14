@@ -7,10 +7,12 @@ energía: Es un dato privado. Puede aumentar o disminuir, únicamente mediante l
 
 # Análisis
 Requisitos:
-- Simular el comportamiento de una célula.
-- El AND se puede consultar, pero no cambiar.
-- El tipo de célula puede consultarse y modificarse.
-- La energía es un dato que puede aumentar o disminuir, solo con las acciones de comer o dividir.
+- Modelar el comportamiento de una célula en un entorno simulado
+- Registrar el ADN de la célula, que es privado y solo puede consultarse
+- Registrar el tipo de célula, que puede consultarse y modificarse libremente
+- Registrar la energía de la célula, que es privada y solo puede modificarse mediante acciones de comer o dividirse.
+- Comer aumenta la energía de la célula
+- Dividir disminuye la energía de la célula
 
 Objeto:
 - Celula
@@ -19,22 +21,36 @@ Características:
 - Celula:
     - adn: String
     - tipo_celula: String
-    - energia: int
+    - energia: Int
 
 Acciones:
 - Celula:
-    - dividir_celula()
-    - comer_celula()
+    - dividir_celula(energia_consumida)
+    - comer_celula(energia_adquirida)
     - mostrar_datos()
+
+# Diseño
+
+Clases:
+- Celula:
+  - Nombre: Celula
+  - Atributos:
+      - adn: String
+      - tipo_celula: String
+      - energia: Int
+  - Métodos:
+      - dividir_celula(energia_consumida)
+      - comer_celula(energia_adquirida)
+      - mostrar_datos()
 
 ```mermaid
 classDiagram
     class Celula {
         -adn: String
         +tipo_celula: String
-        -energia: int
-        +dividir_celula()
-        +comer_celula()
+        -energia: Int
+        +dividir_celula(energia_consumida)
+        +comer_celula(energia_adquirida)
         +mostrar_datos()
     }
 ```
