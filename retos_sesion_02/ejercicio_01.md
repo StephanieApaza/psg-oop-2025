@@ -9,25 +9,24 @@ Este zoológico cuenta con 2 mamíferos, 1 reptil y 1 ave
 # Análisis
 
 Requisitos:
-- Registrar animales
-- Registrar la especie (mamífero, reptil, ave)
-- Registrar el tipo
-- Registrar el lugar donde los encontraron
-- Registrar el origen (para todos: "feral")
+- Crear un registro de los animales que llegan a un zoológico
+- Registrar la especie de los animales (mamífero, reptil, ave)
+- Registrar el tipo de los animales
+- Registrar el lugar donde encontraron a los animales
+- Asignar el origen como "feral" para todos los animales
 
 Objetos:
 - Animal
 
 Características:
 - Animal
-    - Origen
-    - Especie
-    - Tipo
-    - Lugar
+    - origen: String
+    - especie: String
+    - tipo: String
+    - lugar: String
 
 Acciones:
-- Registrar animal
-- Mostrar la información
+- (No hay acciones)
 
 # Diseño
 
@@ -35,21 +34,19 @@ Clases:
 - Animal:
     - Nombre: Animal
     - Atributos:
-        - Origen
-        - Especie
-        - Tipo
-        - Lugar
+        - origen
+        - especie
+        - tipo
+        - lugar
     - Métodos:
-        - registrar_animal()
-        - mostrar_info()
+        - (no hay métodos)
+
 ```mermaid
 classDiagram
     class Animal{
-        String Origen
-        String Especie
-        String Tipo
-        String Lugar
-        registrar_animal()
-        mostrar_info()
+        origen: String
+        especie: String
+        tipo: String
+        lugar: String
     }
 ```
