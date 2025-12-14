@@ -6,12 +6,12 @@ class Animal:
         self.lugar = lugar
 
 print("Animales registrados:")
-animal1 = Animal("Mamífero", "Carnívoro", "Sudáfrica")
-animal2 = Animal("Mamífero", "Hervíboro", "Bolivia")
-animal3 = Animal("Reptil", "Carnívoro", "Australia")
-animal4 = Animal("Ave", "Carnívoro", "Estados Unidos")
+animal_uno = Animal("Mamífero", "Carnívoro", "Sudáfrica")
+animal_dos = Animal("Mamífero", "Hervíboro", "Bolivia")
+animal_tres = Animal("Reptil", "Carnívoro", "Australia")
+animal_cuatro = Animal("Ave", "Carnívoro", "Estados Unidos")
 
-print("Animal 1: ", animal1.origen, animal1.especie, animal1.tipo, animal1.lugar)
-print("Animal 2: ", animal2.origen, animal2.especie, animal2.tipo, animal2.lugar)
-print("Animal 3: ", animal3.origen, animal3.especie, animal3.tipo, animal3.lugar)
-print("Animal 4: ", animal4.origen, animal4.especie, animal4.tipo, animal4.lugar)
+print("Animal 1: ", animal_uno.origen, animal_uno.especie, animal_uno.tipo, animal_uno.lugar)
+print("Animal 2: ", animal_dos.origen, animal_dos.especie, animal_dos.tipo, animal_dos.lugar)
+print("Animal 3: ", animal_tres.origen, animal_tres.especie, animal_tres.tipo, animal_tres.lugar)
+print("Animal 4: ", animal_cuatro.origen, animal_cuatro.especie, animal_cuatro.tipo, animal_cuatro.lugar)
