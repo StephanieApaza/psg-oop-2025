@@ -50,28 +50,28 @@ class Edificio:
                 print("No hay oficinas")
 
 # Uso
-edificio = Edificio("Dos Torres", "Av. Arce 3256")
+edificio_dos_torres = Edificio("Dos Torres", "Av. Arce 3256")
 
-piso1 = Piso(1)
-piso2 = Piso(2)
-piso3 = Piso(3)
+piso_uno = Piso(1)
+piso_dos = Piso(2)
+piso_tres = Piso(3)
 
 # Agregando departamento y oficinas al piso 1
-piso1.agregar_departamento(Departamento(101, ["Jaime Illanes", "Ana Suarez"]))
-piso1.agregar_oficina(Oficina("2A", 25738248))
+piso_uno.agregar_departamento(Departamento(101, ["Jaime Illanes", "Ana Suarez"]))
+piso_uno.agregar_oficina(Oficina("2A", 25738248))
 
 # Agregar departamentos y oficinas al piso 2
-piso2.agregar_departamento(Departamento(201, ["Lisa Gutierrez"]))
-piso2.agregar_oficina(Oficina("2A", 27834821))
+piso_dos.agregar_departamento(Departamento(201, ["Lisa Gutierrez"]))
+piso_dos.agregar_oficina(Oficina("2A", 27834821))
 
 # Agregar departamentos y oficinas al piso 3
-piso3.agregar_departamento(Departamento(301, []))
-piso3.agregar_oficina(Oficina("3A", 26734011))
-piso3.agregar_oficina(Oficina("3B", 27493471))
+piso_tres.agregar_departamento(Departamento(301, []))
+piso_tres.agregar_oficina(Oficina("3A", 26734011))
+piso_tres.agregar_oficina(Oficina("3B", 27493471))
 
 # Agregar pisos
-edificio.agregar_piso(piso1)
-edificio.agregar_piso(piso2)
-edificio.agregar_piso(piso3)
+edificio_dos_torres.agregar_piso(piso_uno)
+edificio_dos_torres.agregar_piso(piso_dos)
+edificio_dos_torres.agregar_piso(piso_tres)
 
-edificio.mostrar_info()
+edificio_dos_torres.mostrar_info()
