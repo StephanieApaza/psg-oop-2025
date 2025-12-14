@@ -29,8 +29,8 @@ Características:
 
 Acciones:
 - Cuenta:
-    - realizar_deposito(monto)
-    - realizar_retiro(monto)
+    - realizar_deposito(monto_depositar)
+    - realizar_retiro(monto_retirar)
     - mostrar_datos()
 
 # Diseño
@@ -43,8 +43,8 @@ Clases:
       - numero_cuenta: Int
       - nombre_titular: String
   - Métodos:
-      - realizar_deposito(monto)
-      - realizar_retiro(monto)
+      - realizar_deposito(monto_depositar)
+      - realizar_retiro(monto_retirar)
       - mostrar_datos()
 
 ```mermaid
@@ -53,8 +53,8 @@ classDiagram
         -saldo: float
         -numero_cuenta: Int
         +nombre_titular: String
-        +realizar_deposito(monto)
-        +realizar_retiro(monto)
+        +realizar_deposito(monto_depositar)
+        +realizar_retiro(monto_retirar)
         +mostrar_datos()
     }
 ```
