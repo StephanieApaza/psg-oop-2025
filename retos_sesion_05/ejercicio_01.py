@@ -4,6 +4,10 @@ class Vehiculo():
         self._velocidad = velocidad
         self.medio = medio
 
+    @property
+    def velocidad(self):
+        return self._velocidad
+
     def mostrar_datos(self):
         """Información general del vehículo"""
         print(f"Medio: {self.medio}")
@@ -28,13 +32,13 @@ class Avion(Vehiculo):
         print(f"El avión esta volando. Su velocidad actual es: {self._velocidad} km/h")
 
 # Ejemplo de uso
-bicicleta1 = Bicicleta(1)
-avion1 = Avion(100)
+bicicleta_urbana = Bicicleta(1)
+avion_comercial= Avion(100)
 print("-------------------------------------------------")
 # Datos iniciales
-bicicleta1.mostrar_datos()
-avion1.mostrar_datos()
+bicicleta_urbana.mostrar_datos()
+avion_comercial.mostrar_datos()
 print("-------------------------------------------------")
 # Acciones
-bicicleta1.pedalear()
-avion1.volar()
+bicicleta_urbana.pedalear()
+avion_comercial.volar()
