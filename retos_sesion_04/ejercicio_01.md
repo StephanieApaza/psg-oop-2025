@@ -9,33 +9,49 @@ nombre del titular: Es público. Puede consultarse y modificarse libremente.
 
 # Análisis
 Requisitos:
-- Un banco necesita desarrollar un módulo de gestión de cuentas bancarias.
-- El saldo es un dato privado, solo se consulta y se modifica a través de deposito y retiro.
-- El deposito permite ingresar dinero e incrementar el saldo.
-- El retiro permite retirar dinero, siempre que el saldo sea suficiente.
-- El número de cuenta es privado y solo puede consultarse.
-- El nombre del titular es público y puede consultarse y modificarse.
+- Gestionar cuentas bancarias dentro de un módulo del banco
+- Registrar cada cuenta bancaria con número de cuenta, nombre de titular y un saldo inicial
+- Permitir consultar el saldo mediante un atributo protegido
+- Modificar el saldo solo a través de deposito y retiro
+- Incrementar el saldo al realizar un depósito
+- Disminuir el saldo al realizar un retiro si hay fondos suficientes
+- Consultar el número de cuenta, pero no modificarlo
+- Modificar y consultar libremente el nombre del titular
 
 Objetos:
 - Cuenta
 
 Características:
 - Cuenta:
-    - saldo: float
-    - numero_cuenta: int
-    - nombre_titular: String
+    - saldo
+    - numero_cuenta
+    - nombre_titular
 
 Acciones:
 - Cuenta:
-    - realizar_deposito()
-    - realizar_retiro()
+    - realizar_deposito(monto)
+    - realizar_retiro(monto)
     - mostrar_datos()
+
+# Diseño
+
+Clases:
+- Cuenta:
+  - Nombre: Cuenta
+  - Atributos:
+      - saldo: float
+      - numero_cuenta: Int
+      - nombre_titular: String
+  - Métodos:
+      - realizar_deposito(monto)
+      - realizar_retiro(monto)
+      - mostrar_datos()
 
 ```mermaid
 classDiagram
     class Cuenta {
         -saldo: float
-        -numero_cuenta: int
+        -numero_cuenta: Int
         +nombre_titular: String
         +realizar_deposito(monto)
         +realizar_retiro(monto)
