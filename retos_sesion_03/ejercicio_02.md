@@ -9,28 +9,54 @@ Un contador de productividad, que aumenta cada vez que prepara una receta con é
 # Análisis
 
 Requisitos:
-- Crear un cocinero
-- Los cocineros tienen una lista de ingredientes disponibles
-- Los cocineros tienen un conjunto de recetas definidas (Pan, Pizza, Galleta)
-- Calcular la métrica agregada de productividad
+- Modelar el trabajo de un cocinero en una cocina profesional
+- Registrar los ingredientes disponibles de cada cocinero
+- Definir un conjunto limitado de recetas que el cocinero puede preparar: pan, pizza y galleta
+- Verificar si un cocinero tiene los ingredientes necesarios para una receta
+- Incrementar la productividad del cocinero cuando prepara una receta con éxito
+- Calcular la productividad agregada cuando existen varios cocineros
 
 Objetos:
 - Cocinero
 
 Características:
-- Cocinero: nombre, ingredientes, productividad, recetas_definidas, productividad_total
+- Cocinero:
+    - nombre
+    - ingredientes
+    - productividad_individual
+    - recetas_definidas
+    - productividad_total
 
 Acciones:
-- Cocinero: cocinar, mostrar_productividad_total, verificar_receta
+- Cocinero: 
+    - cocinar
+    - mostrar_productividad_total
+    - verificar_receta
+
+# Diseño
+
+Clases:
+- Cocinero:
+  - Nombre: Cocinero
+  - Atributos:
+      - nombre: String
+      - ingredientes: List[String]
+      - productividad_individual: Int
+      - recetas_definidas: Dict[String]
+      - productividad_total: Int
+  - Métodos:
+      - cocinar()
+      - mostrar_productividad_total()
+      - verificar_receta()
 
 ```mermaid
 classDiagram
     class Cocinero {
-        String nombre
-        String ingredientes
-        int productividad
-        String recetas_definidas
-        int productividad_total
+        nombre: String
+        ingredientes: List[String] 
+        productividad_individual: Int
+        recetas_definidas: Dict[String] 
+        productividad_total: Int
         cocinar(receta)
         mostrar_productividad_total()
         verificar_receta(receta)
