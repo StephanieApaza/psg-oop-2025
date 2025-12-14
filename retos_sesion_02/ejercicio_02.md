@@ -9,9 +9,9 @@ La vinoteca tiene en su inventario 4 vinos y 3 quesos
 # Análisis
 
 Requisitos:
-- Registrar vinos y quesos
-- Registrar atributos de los vinos (nombre, tipo, cepa y año de producción)
-- Registrar atributos de los quesos (nombre, variedad, edad y si lleva sal)
+- Crear un registro de vinos y quesos para una vinoteca
+- Registrar de cada vino: nombre, tipo, cepa y año de producción 
+- Registrar de cada queso: nombre, variedad, edad y si lleva sal 
 
 Objetos:
 - Vino
@@ -19,19 +19,18 @@ Objetos:
   
 Características:
 - Vino:
-    - Nombre
-    - Tipo
-    - Cepa
-    - Año de producción
+    - nombre
+    - tipo
+    - cepa
+    - año de producción
 - Queso:
-    - Nombre
-    - Variedad
-    - Edad
-    - Lleva sal
+    - nombre
+    - variedad
+    - edad
+    - lleva sal
 
 Acciones:
-- Registrar vinos y quesos
-- Mostrar el inventario de vinos y quesos
+- (no hay acciones)
 
 # Diseño
 
@@ -39,41 +38,35 @@ Clases:
 - Vino:
   - Nombre: Vino
   - Atributos:
-      - Nombre
-      - Tipo
-      - Cepa
-      - Año produccion
+      - nombre: String
+      - tipo: String
+      - cepa: String
+      - anio_produccion: Int
   - Métodos:
-      - registrar_vino()
-      - mostrar_inventario_vino()
+      - (no hay métodos)
 
 - Queso:
   - Nombre: Queso
   - Atributos:
-      - Nombre
-      - Variedad
-      - Edad
-      - Lleva sal
+      - nombre: String
+      - variedad: String
+      - edad: Int
+      - lleva_sal: Bool
   - Métodos:
-      - registrar_queso()
-      - mostrar_inventario_queso()
+      - (no hay métodos)
 ```mermaid
 classDiagram
     class Vino{
-        String nombre
-        String tipo
-        String cepa
-        int anio_produccion
-        registrar_vino()
-        mostrar_inventario_vino()
+        nombre: String 
+        tipo: String 
+        cepa: String 
+        anio_produccion: Int
     }
 
     class Queso{
-        String nombre
-        String variedad
-        int edad
-        Bool lleva_sal
-        registrar_queso()
-        mostrar_inventario_queso()
+        nombre: String 
+        variedad: String 
+        edad: Int
+        lleva_sal: Bool
     }
 ```
