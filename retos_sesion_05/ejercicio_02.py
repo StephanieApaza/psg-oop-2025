@@ -26,12 +26,12 @@ class Pato(Nadador, Volador):
         self.volar()
 
 # Ejemplo de uso
-personaje1 = Pez()
-personaje2 = Pajaro()
-personaje3 = Pato()
+pez_jugador = Pez()
+pajaro_jugador = Pajaro()
+pato_jugador = Pato()
 print("--------------------------------------------------------")
-personaje1.mostrar()
+pez_jugador.mostrar()
 print("--------------------------------------------------------")
-personaje2.mostrar()
+pajaro_jugador.mostrar()
 print("--------------------------------------------------------")
-personaje3.mostrar()
+pato_jugador.mostrar()
