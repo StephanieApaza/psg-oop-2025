@@ -1,23 +1,23 @@
 import random
 
 class DadosDeLaSuerte:
-    """Clase que representa el juego Dados de la Suerte."""
+    """Clase que representa el juego Dados de la Suerte"""
 
     def __init__(self) -> None:
-        """Inicializa el juego con estado y último lanzamiento."""
+        """Inicializa el juego con estado y último lanzamiento"""
         self.ultimo_lanzamiento: int = 0
         self.estado_juego: str = ""
         self.continuar_juego: bool = True
 
     def lanzar_dados(self) -> int:
-        """Lanza dos dados y devuelve la suma."""
+        """Lanza dos dados y devuelve la suma"""
         dado_uno: int = random.randint(1, 6)
         dado_dos: int = random.randint(1, 6)
         self.ultimo_lanzamiento = dado_uno + dado_dos
         return self.ultimo_lanzamiento
 
     def evaluar_lanzamiento(self) -> None:
-        """Evalúa el último lanzamiento y actualiza el estado del juego."""
+        """Evalúa el último lanzamiento y actualiza el estado del juego"""
         if self.ultimo_lanzamiento in [7, 11]:
             self.estado_juego = "¡Ganaste 🎉!"
             self.continuar_juego = False
