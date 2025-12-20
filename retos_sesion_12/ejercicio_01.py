@@ -10,7 +10,10 @@ class DadosDeLaSuerte:
         self.continuar_juego: bool = True
 
     def lanzar_dados(self) -> int:
-        """Lanza dos dados y devuelve la suma"""
+        """Lanza dos dados y devuelve la suma
+        Returns:
+            int: Suma de los resultados de los dados
+        """
         dado_uno: int = random.randint(1, 6)
         dado_dos: int = random.randint(1, 6)
         self.ultimo_lanzamiento = dado_uno + dado_dos
